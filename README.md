@@ -45,3 +45,10 @@ A theme must include a versioned manifest, required public pages, schema-defined
 Java business data, pricing, checkout, merchant settlement, and provider verification remain server authoritative. Merchant-connected Paystack/Stripe/carrier availability is capability-specific; a business can create its organization with **no connected provider or Atlas-owned banking/KYB**. Theme code never gets business admin APIs, raw payment secrets or direct database access.
 
 **No files in this repo constitute a working theme builder yet.**
+
+
+## Canonical shared Protobuf contracts (2026-10-26)
+
+The independent [atlashub_contracts](https://github.com/OlamidotunIY/atlashub_contracts) repository now owns cross-service `.proto` messages and public/internal RPC exposure. This SDK owns **developer-friendly React hooks, CLI, scaffold and local theme manifest UX**, but must consume versioned generated **public-only** contract packages rather than duplicate Java catalog/cart wire types. Browser themes use a **Connect/gRPC-Web-compatible trusted public gateway**, not Java's native internal gRPC endpoint. Never bundle `AuthorizedToolGatewayService`, raw provider credentials, admin IAM or private event clients into public templates. Generated TypeScript package names and published versions are still pending.
+
+Contracts: [transport policy](https://github.com/OlamidotunIY/atlashub_contracts/blob/main/docs/architecture/transports-security.md), [generated packages](https://github.com/OlamidotunIY/atlashub_contracts/blob/main/docs/architecture/generated-packages.md).
