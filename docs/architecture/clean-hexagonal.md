@@ -1,5 +1,8 @@
 # Architecture — Domain-Driven Design, Clean Architecture, Hexagonal/Ports and Adapters
 
+**Shared contracts decision (2026-10-26):** [atlashub_contracts](https://github.com/OlamidotunIY/atlashub_contracts) owns Protobuf API/service/event wire contracts and versioned generated Java/TS/Python packages. This SDK owns developer experience, hook interfaces, scaffold/local settings UX, and the public client adapter. Do not duplicate wire messages, assume the browser supports native gRPC or expose private tool RPCs. [Contract boundaries](https://github.com/OlamidotunIY/atlashub_contracts/blob/main/docs/architecture/transports-security.md).
+
+
 **Status:** Normative engineering policy for future source; only docs exist today.
 
 ## Core principle
